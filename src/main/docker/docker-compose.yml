@@ -12,7 +12,30 @@ services:
       MYSQL_PASSWORD: drive_safety
     ports:
       - "3306:3306"
+    networks:
+      - quarkus-api-network
     volumes:
       - mysql_data:/var/lib/mysql
+
+  api:
+    container_name: quarkus-api
+    image: arielgpaz/quarkus-api:latest
+    depends_on:
+      - mysql
+    build:
+      dockerfile: Dockerfile.jvm
+      context: .
+    ports:
+      - "8080:8080"
+    environment:
+      DB_USER: "car_driver"
+      DB_PASSWORD: "drive_safety"
+      DB_URL: "jdbc:mysql://mysql:3306/cars_db"
+    networks:
+      - quarkus-api-network
+
 volumes:
   mysql_data:
+
+networks:
+  quarkus-api-network:
