@@ -1,8 +1,18 @@
-# com.apaz.quarkus.api
+# Quarkus-API
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+This project is a Quarkus application that provides a REST API for cars registry. This was developed to learn some technologies
+as Quarkus, AWS and Terraform.
+EC2 was used to host the application and database, this is not a production-ready solution, there are better AWS services
+like ECS ou EKS for the application and RDS for the database.
 
-If you want to learn more about Quarkus, please visit its website: <https://quarkus.io/>.
+## Technologies Used
+
+* Programming language: Java
+* Framework: Quarkus
+* Build tool: Maven
+* Database: MySQL
+* Cloud Platforms: Amazon Web Services (AWS)
+* Infrastructure as Code: Terraform
 
 ## Running the application in dev mode
 
